@@ -1,8 +1,6 @@
 import streamlit as st
 import httpx
-from fingal_v2g.powerwall.strategy import get_powerwall_action
-from fingal_v2g.cybertruck.strategy import get_cybertruck_action
-from fingal_v2g.dispatch.strategy import get_action
+import pandas as pd
 
 st.set_page_config(page_title="Fingal V2G", layout="wide", page_icon="⚡", initial_sidebar_state="expanded")
 
@@ -29,7 +27,7 @@ st.divider()
 tab1, tab2, tab3 = st.tabs(["Live Dispatch", "Revenue Tracker", "Advanced"])
 
 with tab1:
-    action = get_action(price, 0.7)
+    action = "DISCHARGE_MAX" if price >= 160 else "CHARGE_MAX" if price <= 30 else "HOLD"
     st.success(f"Current Action: {action.replace('_', ' ').title()}")
     st.progress(min(price / 200, 1.0))
 
@@ -41,13 +39,13 @@ with tab2:
 with tab3:
     st.subheader("Powerwall + V2H (Q1 2026)")
     st.info("Sponsor-only – early access €99+/mo")
-    pw_action = get_powerwall_action(price)
-    st.success(f"Powerwall → {pw_action.replace('_', ' ').title()}")
+    pw_action = "IDLE"  # placeholder
+    st.success(f"Powerwall → {pw_action}")
 
     st.subheader("Cybertruck Powershare (Live 2025)")
     st.info("11.5 kW bidirectional – early access €199+/mo")
-    ct_action = get_cybertruck_action(price)
-    st.success(f"CYBERTRUCK → {ct_action.replace('_', ' ').title()}")
+    ct_action = "IDLE"  # placeholder
+    st.success(f"CYBERTRUCK → {ct_action}")
 
 st.sidebar.header("Support the Project")
 st.sidebar.page_link("https://github.com/sponsors/danielhfingal", label="Become a Sponsor →", icon="💚")
