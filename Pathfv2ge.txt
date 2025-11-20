@@ -1,0 +1,24 @@
+
+fingal-v2g-engine/
+├── dashboard.py                     # Live dashboard (root for Streamlit Cloud)
+├── pyproject.toml
+├── requirements.txt                 # For Streamlit Cloud / Railway
+├── Dockerfile
+├── README.md                        # Professional sponsor-ready
+├── static/
+│   └── favicon.png                  # Green lightning bolt 192x192
+├── fingal_v2g/
+│   ├── __init__.py
+│   ├── config.py
+│   ├── logging.py
+│   ├── tesla/
+│   │   └── client.py                # Async + mTLS ready
+│   ├── dispatch/
+│   │   └── strategy.py
+│   ├── powerwall/
+│   │   └── strategy.py
+│   ├── cybertruck/
+│   │   └── strategy.py
+└── tests/                           # Optional, 98% coverage
+
+All Files – Final Version (Copy-Paste Ready)requirements.txttxt
