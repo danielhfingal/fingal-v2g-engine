@@ -2,4 +2,3 @@ streamlit
 httpx
 pandas
 structlog
-EOF
