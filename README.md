@@ -33,7 +33,7 @@ The future is already here — it’s just quietly charging in your driveway.
 
 
 
-MIT License
+License MIT © 2025 daniel fingal Do whatever you want with it. Just keep the level high.
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
